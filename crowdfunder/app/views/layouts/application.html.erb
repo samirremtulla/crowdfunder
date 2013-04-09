@@ -7,18 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div class="navbar">
-  <div class="navbar-inner">
-    <a class="brand" href="#">CrowdFunder</a>
-    <ul class="nav">
-      <li class="<%= 'active' if current_page? root_path %>"><%= link_to "Home", root_path%></li>
-      <li class="<%='active' if current_page? projects_index_path %>"><%= link_to "Projects", projects_index_path%></li>
-    </ul>
+<div class="container">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">CrowdFunder</a>
+      <ul class="nav">
+        <li class="<%= 'active' if current_page? root_path %>"><%= link_to "Home", root_path%></li>
+        <li class="<%='active' if current_page? projects_path %>"><%= link_to "Projects", projects_path%></li>
+      </ul>
+    </div>
   </div>
+  <%= yield %>
 </div>
-
-<%= yield %>
-
 </body>
 </html>
