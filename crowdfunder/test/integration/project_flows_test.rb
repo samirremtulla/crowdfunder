@@ -16,6 +16,11 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
     assert page.has_content?('Waterproof Whiteboard')
     assert page.has_content?('Something else')
     assert page.has_content?('Wifi-enabled lamps!')
+
+    #Monica's stuff
+    click_link 'Waterproof Whiteboard'
+    assert_equal project_path(p2), current_path
+    assert find('h1:first').has_content? p2.title
   end
 
   test "navigation" do
@@ -26,6 +31,8 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
     visit "/projects"
     assert_equal projects_path, current_path
     assert_equal "Projects", find("ul.nav li.active a").text
+
+
   end
 
   test "show" do
