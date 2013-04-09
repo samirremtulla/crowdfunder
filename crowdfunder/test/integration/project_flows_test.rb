@@ -33,7 +33,7 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
     visit "/projects/#{p1.id}"
     assert_equal project_path(p1), current_path
     assert page.has_content?('Bowls')
-    assert page.has_content?('Karl Denninger')
+    assert page.has_content?("#{p1.user.first_name} #{p1.user.last_name}")
   end
 
 
