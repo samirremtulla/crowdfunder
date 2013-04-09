@@ -9,4 +9,6 @@ FactoryGirl.define do
     goal 12000
   end
 
+
+
 end

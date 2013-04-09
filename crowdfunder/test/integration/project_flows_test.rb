@@ -28,6 +28,14 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
     assert_equal "Projects", find("ul.nav li.active a").text
   end
 
+  test "show" do
+    p1 = FactoryGirl.create(:project, title: "Bowls")
+    visit "/projects/#{p1.id}"
+    assert_equal project_path(p1), current_path
+    assert page.has_content?('Bowls')
+    assert page.has_content?('Karl Denninger')
+  end
+
 
   
 end
