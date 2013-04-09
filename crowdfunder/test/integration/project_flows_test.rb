@@ -17,5 +17,17 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
     assert page.has_content?('Something else')
     assert page.has_content?('Wifi-enabled lamps!')
   end
+
+  test "navigation" do
+    visit "/"
+    assert_equal root_path, current_path
+    assert_equal "Home", find("ul.nav li.active a").text
+  
+    visit "/projects"
+    assert_equal projects_path, current_path
+    assert_equal "Projects", find("ul.nav li.active a").text
+  end
+
+
   
 end
