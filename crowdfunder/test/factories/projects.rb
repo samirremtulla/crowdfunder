@@ -8,4 +8,5 @@ FactoryGirl.define do
     description "Lorem ipsum... "
     goal 12000
   end
+
 end

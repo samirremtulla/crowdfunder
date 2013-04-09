@@ -6,8 +6,16 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
   # end
 
   test "the index page lists all our projects" do
-    visit '/projects'
-    assert page.has_content?('Listing Projects')
-  end
+    p1 = FactoryGirl.create(:project)
+    p2 = FactoryGirl.create(:project, title: "Waterproof Whiteboard")
+    p3 = FactoryGirl.create(:project, title: "Something else")
 
+    visit '/projects'
+
+    assert page.has_content?('Listing Projects')
+    assert page.has_content?('Waterproof Whiteboard')
+    assert page.has_content?('Something else')
+    assert page.has_content?('Wifi-enabled lamps!')
+  end
+  
 end
