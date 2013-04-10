@@ -4,9 +4,22 @@ class PledgesController < ApplicationController
   end
 
   def show
+    @pledge = Pledge.find(params[:id])
   end
 
-  def create
+  def create    
+    @project = Project.find(params[:project_id])
+    @pledge = Pledge.new(
+      :amount => params[:pledge][:amount],
+      :user_id => current_user.id,
+      :project_id => params[:id]
+      )
+
+    if @pledge.save!
+      redirect_to root_path, notice: "Thanks for pledging!"
+    else
+      render 'projects/show'
+    end
   end
 
   def edit

@@ -1,3 +1,15 @@
 <h1><%=@project.title%></h1>
 <p><%=@project.teaser%></p>
 <p>Created By: <%=@project.user.first_name%> <%=@project.user.last_name%></p>
+
+<%= form_for ([@project, @pledge]) do |f| %>
+  <%= f.number_field :amount, :placeholder => "Pledge Now!"  %>
+  <br/>
+  <% if current_user %>
+    <%= f.submit 'Create Pledge', class: 'btn btn-primary'%>
+  <% else %>
+    <%= link_to 'Login', new_session_path, class: 'btn btn-primary' %>
+  <%end%>
+<%end%>
+
+<footer>*Everything is in Canadian dollars*</footer>
