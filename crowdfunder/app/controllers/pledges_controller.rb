@@ -1,4 +1,7 @@
 class PledgesController < ApplicationController
+  
+  before_filter :require_login
+
   def index
     @pledges = Pledge.all
   end
@@ -12,7 +15,7 @@ class PledgesController < ApplicationController
     @pledge = Pledge.new(
       :amount => params[:pledge][:amount],
       :user_id => current_user.id,
-      :project_id => params[:id]
+      :project_id => params[:project_id]
       )
 
     if @pledge.save!

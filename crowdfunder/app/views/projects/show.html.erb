@@ -5,11 +5,8 @@
 <%= form_for ([@project, @pledge]) do |f| %>
   <%= f.number_field :amount, :placeholder => "Pledge Now!"  %>
   <br/>
-  <% if current_user %>
-    <%= f.submit 'Create Pledge', class: 'btn btn-primary'%>
-  <% else %>
-    <%= link_to 'Login', new_session_path, class: 'btn btn-primary' %>
-  <%end%>
+  <%= f.submit 'Create Pledge', class: 'btn btn-primary'%>
+  
 <%end%>
 
 <footer>*Everything is in Canadian dollars*</footer>

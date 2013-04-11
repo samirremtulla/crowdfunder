@@ -40,7 +40,7 @@ class ActionDispatch::IntegrationTest
     fill_in "email", with: user.email
     fill_in "password", with: pass
     click_button "Login"
-
+    user
     # No asserts here since we are not TESTING login here, leave that to the user flow tests
   end
 
