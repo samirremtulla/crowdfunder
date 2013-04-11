@@ -1,4 +1,7 @@
 class My::ProjectsController < ApplicationController
+  before_filter :require_login
+
+
   def index
     @projects = current_user.projects.all
   end
@@ -10,7 +13,7 @@ class My::ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
     @project.user_id = current_user.id
-    
+
     if @project.save
       redirect_to projects_path notice: "Thank you for creating a project"
     else

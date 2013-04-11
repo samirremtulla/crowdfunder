@@ -104,6 +104,14 @@ class My::ProjectFlowsTest < ActionDispatch::IntegrationTest
     assert has_content?("Elephants")
   end
 
+  test "redirects to login when signed-out" do
+    visit "/my/projects"
+
+    assert has_content?("Please login first")
+    assert_equal new_session_path, current_path
+
+  end
+
 
 
 
