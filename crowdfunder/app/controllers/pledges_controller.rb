@@ -22,7 +22,8 @@ class PledgesController < ApplicationController
     @pledge.user_id = current_user.id
     
     if @pledge.save!
-      redirect_to root_path, notice: "Thanks for pledging!"
+      UserMailer.new_pledge(@pledge).deliver
+      redirect_to project_path(@project), notice: "Thanks for pledging!"
     else
       render 'projects/show', notice: "Error"
     end

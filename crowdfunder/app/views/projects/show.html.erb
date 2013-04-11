@@ -1,5 +1,10 @@
+
 <h1><%=@project.title%></h1>
 <p><%=@project.teaser%></p>
+
+
+<p>Pledged: <%=@sum%></p>
+
 <p>Created By: <%=@project.user.first_name%> <%=@project.user.last_name%></p>
 
 <%= form_for ([@project, @pledge]) do |f| %>
