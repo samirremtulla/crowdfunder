@@ -26,7 +26,7 @@ class PledgeFlowsTest < ActionDispatch::IntegrationTest
     click_button 'Create Pledge'
 
     # Should be Redirected back to project page with thank you message
-    assert_equal root_path, current_path
+    assert_equal project_path(@project), current_path
     assert page.has_content?("Thanks for pledging!")
 
     # Verify that the pledge was created with the right attributes

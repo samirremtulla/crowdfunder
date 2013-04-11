@@ -7,6 +7,6 @@ class UserMailer < ActionMailer::Base
     @pledge = pledge
     @backer = pledge.user
 
-    mail(:to => @owner.email, :subject => "New Pledge!", :from => "no-reply@awesome.com")
+    mail(:to => @owner.email, :subject => "New Pledge!")
   end
 end
