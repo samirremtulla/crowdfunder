@@ -4,7 +4,18 @@ class My::ProjectsController < ApplicationController
   end
 
   def new
-  
+    @project = Project.new(params[:project])
+  end
+
+  def create
+    @project = Project.new(params[:project])
+    @project.user_id = current_user.id
+    
+    if @project.save
+      redirect_to projects_path notice: "Thank you for creating a project"
+    else
+      render action: :new
+    end
   end
 
   def edit
@@ -19,7 +30,9 @@ class My::ProjectsController < ApplicationController
     else
       render action: :edit, error: "Error"
     end
-
   end
+
+
+
 end
 

@@ -1,2 +1,10 @@
-<h1>My::Projects#new</h1>
-<p>Find me in app/views/my/projects/new.html.erb</p>
+<h1>New Project</h1>
+<br/>
+<%= form_for [:my, @project] do |f| %>
+  <p><%= f.text_field :title, placeholder:"Title"%></p>
+  <p><%= f.text_field :description, placeholder: "Description"%></p>
+  <p><%= f.text_field :teaser, placeholder: "Teaser"%></p>
+  <p><%= f.text_field :goal, placeholder: "Goal"%></p>
+<%= f.submit "Create", class: "btn btn-primary"%>
+
+<%end%>

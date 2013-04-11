@@ -1,7 +1,5 @@
 <h1>Edit <%=@project.title%></h1>
 
-<!-- Form for, submit -->
-
 <%= form_for [:my, @project] do |f| %>
 
   <p><%= f.text_field :title, placeholder: "Title" %></p>

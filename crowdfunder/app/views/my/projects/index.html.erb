@@ -1,5 +1,5 @@
 <h1>Welcome <%=current_user.email%></h1>
-
+<button class="btn btn-primary"><%= link_to "New Project", new_my_project_path%></button>
 <% @projects.each do |p|%>
   <p>
     <li><strong><%=p.title%></strong></li>
