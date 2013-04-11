@@ -1,9 +1,10 @@
 <h1>Welcome <%=current_user.email%></h1>
 
-<% @my_projects.each do |p|%>
+<% @projects.each do |p|%>
   <p>
     <li><strong><%=p.title%></strong></li>
-    <%=p.teaser%>
+    <li><%=p.teaser%></li>
+    <%= link_to "Edit", edit_my_project_path(p)%>
   </p>
 
 <%end%>

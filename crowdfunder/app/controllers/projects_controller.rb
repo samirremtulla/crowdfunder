@@ -8,4 +8,5 @@ class ProjectsController < ApplicationController
     @pledge = Pledge.new #@project.pledges.build
   end
 
+
 end
