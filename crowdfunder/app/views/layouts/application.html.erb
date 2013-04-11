@@ -12,10 +12,10 @@
     <div class="navbar-inner">
       <a class="brand" href="#">CrowdFunder</a>
       <ul class="nav">
-        <li class="<%='active' if controller_name == 'welcome' %>"><%= link_to "Home", root_path%></li>
-        <li class="<%='active' if controller_name == 'projects' %>"><%= link_to "Projects", projects_path%></li>
+        <li class="<%='active' if params[:controller] == 'welcome' %>"><%= link_to "Home", root_path%></li>
+        <li class="<%='active' if params[:controller] == 'projects' %>"><%= link_to "Projects", projects_path%></li>
         <% if logged_in? %>
-          <li class="<%='active' if controller_name == 'my/projects'%>"><%= link_to "My Projects", 
+          <li class="<%='active' if params[:controller] == 'my/projects'%>"><%= link_to "My Projects", 
           my_projects_path%></li>
         <%end%>
       </ul>

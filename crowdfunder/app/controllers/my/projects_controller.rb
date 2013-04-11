@@ -15,9 +15,9 @@ class My::ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     if @project.update_attributes(params[:project])
-      redirect_to root_path, notice: "Project Updated"
+      redirect_to my_projects_path, notice: "Project Updated"
     else
-      render action: :edit
+      render action: :edit, error: "Error"
     end
 
   end

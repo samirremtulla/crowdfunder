@@ -24,7 +24,7 @@ class PledgesController < ApplicationController
     if @pledge.save!
       redirect_to root_path, notice: "Thanks for pledging!"
     else
-      render 'projects/show'
+      render 'projects/show', notice: "Error"
     end
   end
 
