@@ -1,0 +1,9 @@
+<h1>Welcome <%=current_user.email%></h1>
+
+<% @my_projects.each do |p|%>
+  <p>
+    <li><strong><%=p.title%></strong></li>
+    <%=p.teaser%>
+  </p>
+
+<%end%>

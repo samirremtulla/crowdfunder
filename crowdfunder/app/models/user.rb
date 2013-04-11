@@ -9,5 +9,5 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true
   validates :password, :presence => true, :on => :create
 
-  attr_accessible :first_name, :last_name, :email, :password
+  # attr_accessible :first_name, :last_name, :email, :password
 end

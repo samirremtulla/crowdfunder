@@ -1,15 +1,19 @@
 Crowdfunder::Application.routes.draw do
 
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  resources :projects do 
+  resources :projects, only: [:index, :show] do 
     resources :pledges
   end
 
+  namespace :my do #my/projects/5     my/projects/2/edit    my/projects
+    # goes to a my controller
+    resources :projects
+  end
 
-  resources :users, except: [:index]
+
+  resources :users, except: [:index, :destroy]
 
   # Sign in and sign out actions
   resource :session, :only => [:new, :create, :destroy]
