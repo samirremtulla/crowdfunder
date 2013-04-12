@@ -9,7 +9,9 @@ Crowdfunder::Application.routes.draw do
 
   namespace :my do #my/projects/5     my/projects/2/edit    my/projects
     # goes to a my controller
-    resources :projects
+    resources :projects do
+      resources :images
+    end
   end
 
 
