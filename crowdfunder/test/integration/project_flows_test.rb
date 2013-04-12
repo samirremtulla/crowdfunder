@@ -12,7 +12,7 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
 
     visit '/projects'
 
-    assert page.has_content?('Listing Projects')
+    assert page.has_content?('Projects')
     assert page.has_content?('Waterproof Whiteboard')
     assert page.has_content?('Something else')
     assert page.has_content?('Wifi-enabled lamps!')

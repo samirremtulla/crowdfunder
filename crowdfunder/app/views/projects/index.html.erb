@@ -1,9 +1,14 @@
-<h1>Listing Projects</h1>
+<!-- <h1>Projects <small><%= page_entries_info @projects %></small></h1> -->
+<h1>Projects <p><small><%= page_entries_info @projects %></small></p></h1>
+<hr/>
+
 <ul>
   <% @projects.each do |project| %>
     <p>
     <li><strong><%= link_to project.title, project_path(project) %></strong><br/>
-    <%= project.teaser %></li></p>
+    <%= project.teaser %></li>
+    <%= project.created_at %></p>
   <%end%>
 </ul>
 
+<%= paginate @projects %>

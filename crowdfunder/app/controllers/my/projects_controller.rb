@@ -3,7 +3,7 @@ class My::ProjectsController < ApplicationController
 
 
   def index
-    @projects = current_user.projects.all
+    @projects = current_user.projects.latest.page params[:page] 
   end
 
   def new

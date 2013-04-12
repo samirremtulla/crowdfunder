@@ -1,10 +1,12 @@
 <h1>Welcome <%=current_user.email%></h1>
 <button class="btn btn-primary"><%= link_to "New Project", new_my_project_path%></button>
+<ul>
 <% @projects.each do |p|%>
   <p>
-    <li><strong><%=p.title%></strong></li>
-    <li><%=p.teaser%></li>
+    <li><strong><%=p.title%></strong><br/>
+    <%=p.teaser%></li>
     <%= link_to "Edit", edit_my_project_path(p)%>
   </p>
-
 <%end%>
+</ul>
+<%= paginate @projects %>

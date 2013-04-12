@@ -7,4 +7,6 @@ class Project < ActiveRecord::Base
   validates :goal, :presence => true
   validates :teaser, :presence => true
   validates :title, :presence => true
+
+  scope :latest, order('created_at DESC')
 end

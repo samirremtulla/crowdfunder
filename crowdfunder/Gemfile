@@ -7,6 +7,8 @@ gem 'rails', '3.2.13'
 
 gem 'pg' #postgres database instead of sqlite
 gem 'sorcery' 
+gem 'kaminari'
+gem 'kaminari-bootstrap'
 
 # Gems used only for assets and not required
 # in production environments by default.
