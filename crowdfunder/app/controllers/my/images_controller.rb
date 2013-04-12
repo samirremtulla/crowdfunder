@@ -19,6 +19,13 @@ class My::ImagesController < ApplicationController
     end
   end
 
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+    redirect_to edit_my_project_path(@project), notice: "Picture Deleted!"
+  end
+
+
   protected
 
   def require_project

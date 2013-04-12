@@ -14,7 +14,9 @@
 <ul class="thumbnails">
   <% @images.each do |img| %>
     <li class = "span2">
-      <img src="<%=img.file.url%>"></img>
+      <a href = "<%=img.file.url%>"> 
+        <img src="<%=img.file.url%>"></img>
+        <div class = "btn btn-danger"><%= link_to "Delete", my_project_image_path(@project, img), :method => :delete, :confirm => "Are you sure?" %></div>      </a>
     </li>
   <%end%>
 </ul>

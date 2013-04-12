@@ -8,5 +8,7 @@
   <p><%= f.text_field :goal, placeholder: "Goal"%></p>
   <%= f.submit "Update", class: "btn btn-primary"%>
 <%end%>
-  <div class = "btn btn-primary"><%= link_to "Upload Images", my_project_images_path(@project)%></div>
-
+  <%= link_to "Upload Images", my_project_images_path(@project), :class => "btn btn-primary"%>
+  <br/>
+  <br/>
+<%= link_to "Delete", my_project_path(@project), :method => :delete, :confirm => "Are you sure?", :class => "btn btn-danger"%>
